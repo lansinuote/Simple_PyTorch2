@@ -1,0 +1,40 @@
+#下载Anaconda
+wget https://repo.anaconda.com/archive/Anaconda3-2023.03-1-Linux-x86_64.sh
+
+#安装Anaconda
+sh Anaconda3-2023.03-1-Linux-x86_64.sh
+
+#创建Python环境
+conda create -n pt2 python=3.10
+
+#切换到pt2环境
+conda activate pt2
+
+#安装PyTorch,学习本套代码使用CPU版本即可
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
+
+#安装CUDA版本的PyTorch(可选)
+#一个环境下装了CPU版本就不能再安装CUDA版本,二选一即可
+#更多版本:https://pytorch.org/get-started/previous-versions
+pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
+
+#安装Huggingface
+pip install datasets==2.9.0
+pip install transformers==4.26.1
+
+#安装Jupyter Notebook
+pip install jupyter
+
+#生成配置文件
+jupyter notebook --generate-config --allow-root
+
+#配置允许远程访问和访问令牌
+vim ~/.jupyter/jupyter_notebook_config.py
+c.NotebookApp.ip = '*'
+c.NotebookApp.token = 'your_token_here'
+
+#启动
+jupyter notebook --config=/root/.jupyter/jupyter_notebook_config.py --allow-root --notebook-dir=/path/to/your/code
+
+#访问
+http://your_server_ip:8888
