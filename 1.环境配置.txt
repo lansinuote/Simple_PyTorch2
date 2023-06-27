@@ -19,8 +19,8 @@ pip3 install torch torchvision torchaudio --index-url https://download.pytorch.o
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 
 #安装Huggingface
-pip install datasets==2.9.0
-pip install transformers==4.26.1
+pip install datasets==2.13.0
+pip install transformers==4.30.2
 
 #安装Jupyter Notebook
 pip install jupyter
